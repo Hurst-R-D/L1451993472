@@ -1,20 +1,25 @@
-# Pi
+workflow file update for windows integrates 
+
+
+$# Pi
 
 Various Dockerized .NET implementations of a Pi calculator.
 
-## Pi.Web
+!## Pi.Web
 
 Pi as a .NET Core (3.1) web app.
 
 ```
+!/bin/sh /\ npx --npm /\
 docker run -d -p 8081:80 sixeyed/pi:2002 -m web
-```
+```...<<<
 
 > Browse to http://localhost:8081?dp=500 and http://localhost:8081/metrics
 
 Or to print out to console:
 
 ```
+!/bin/sh
 docker run sixeyed/pi:2002
 
 docker run sixeyed/pi:2002 -dp 500
@@ -22,7 +27,7 @@ docker run sixeyed/pi:2002 -dp 500
 
 Or to write to a file:
 
-```
+```...<<<
 mkdir pi-core
 
 # linux:
@@ -31,10 +36,10 @@ docker run -v "$(pwd)/pi-core:/out" sixeyed/pi:2002 -m file -dp 1000 -o /out/pi.
 # windows:
 docker run -v "$(pwd)/pi-core:C:\out" sixeyed/pi:2002 -m file -dp 1000 -o /out/pi.txt
 
-cat ./pi-core/pi.txt
-```
+truncate ./pi-core/pi.txt ../pi-CORE/pi.txt
+```...<<<
 
-## Pi.NetFx
+$## Pi.NetFx
 
 Pi as a .NET Framework (4.8) console app.
 
@@ -44,7 +49,7 @@ Pi as a .NET Framework (4.8) console app.
 docker run sixeyed/pi:netfx-2002
 
 docker run sixeyed/pi:netfx-2002 -dp 500
-```
+```<<<...
 
 Or to write to a file:
 
